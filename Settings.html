@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Under Construction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FF9FF3;  /* Light pink */
+            --secondary-color: #D6A2E8;  /* Light purple */
+            --dark-accent: #BD83B8;  /* Soft purple */
+            --light-accent: #FAC8CD;  /* Baby pink */
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FFF5F7;  /* Very light pink background */
+            color: #5E4A5A;  /* Soft dark purple for text */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .construction-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(214, 162, 232, 0.3);  /* Light purple shadow */
+            padding: 40px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--light-accent);
+        }
+        
+        .construction-icon {
+            font-size: 5rem;
+            color: var(--dark-accent);
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        h1 {
+            color: var(--dark-accent);
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(255, 159, 243, 0.2);
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #7A6A79;
+        }
+        
+        .progress {
+            height: 10px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            background-color: var(--light-accent);
+        }
+        
+        .progress-bar {
+            background-color: var(--primary-color);
+            animation: progress-animation 3s infinite;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .countdown-item {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            min-width: 70px;
+            box-shadow: 0 4px 8px rgba(214, 162, 232, 0.3);
+        }
+        
+        .countdown-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        
+        .btn-notify {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(214, 162, 232, 0.3);
+        }
+        
+        .btn-notify:hover {
+            background: linear-gradient(135deg, #F191D9, #C88FE8);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(214, 162, 232, 0.4);
+            color: white;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        
+        @keyframes progress-animation {
+            0% {width: 0%;}
+            50% {width: 100%;}
+            100% {width: 0%;}
+        }
+        
+        .floating-tools {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            opacity: 0.4;
+        }
+        
+        .floating-tools i {
+            color: var(--dark-accent);
+        }
+        
+        /* Modal styling */
+        .modal-header {
+            background-color: var(--light-accent);
+            color: var(--dark-accent);
+        }
+        
+        .modal-footer .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .modal-footer .btn-primary:hover {
+            background-color: #F191D9;
+            border-color: #F191D9;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .construction-container {
+                padding: 30px 20px;
+            }
+            
+            .countdown {
+                gap: 8px;
+            }
+            
+            .countdown-item {
+                min-width: 55px;
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="construction-container">
+            <div class="floating-tools">
+                <i class="fas fa-tools fa-2x"></i>
+                <i class="fas fa-hammer fa-2x ms-2"></i>
+                <i class="fas fa-cog fa-2x ms-2"></i>
+            </div>
+            
+            <div class="construction-icon">
+                <i class="fas fa-hard-hat"></i>
+            </div>
+            
+            <h1>Under Construction</h1>
+            
+            <p>We're working hard to bring you an amazing experience. This section will be available soon!</p>
+            
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"></div>
+            </div>
+            
+            <div class="countdown">
+                <div class="countdown-item text-center">
+                    <div class="countdown-value" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item text-center">
+                    <div class="countdown-value" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item text-center">
+                    <div class="countdown-value" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item text-center">
+                    <div class="countdown-value" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+            
+            <p>Estimated completion: <strong id="launch-date">June 30, 2023</strong></p>
+            
+            <button class="btn btn-notify" data-bs-toggle="modal" data-bs-target="#notifyModal">
+                <i class="fas fa-bell me-2"></i>Notify Me When Ready
+            </button>
+        </div>
+    </div>
+    
+    <!-- Notify Modal -->
+    <div class="modal fade" id="notifyModal" tabindex="-1" aria-labelledby="notifyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="notifyModalLabel">Get Notified</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Enter your email address below to receive a notification when this page is ready.</p>
+                    <form id="notifyForm">
+                        <div class="mb-3">
+                            <label for="emailInput" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="emailInput" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" form="notifyForm" class="btn btn-primary">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Set the launch date (3 days from now for demo purposes)
+        const launchDate = new Date();
+        launchDate.setDate(launchDate.getDate() + 3);
+        
+        // Display the formatted launch date
+        document.getElementById('launch-date').textContent = launchDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        
+        // Update countdown every second
+        const countdown = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+            
+            // Calculate days, hours, minutes, seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            // If the countdown is finished
+            if (distance < 0) {
+                clearInterval(countdown);
+                document.querySelector('.countdown').innerHTML = '<div class="alert alert-success">The page is now live!</div>';
+            }
+        }, 1000);
+        
+        // Handle form submission
+        document.getElementById('notifyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            
+            // Here you would typically send this to your backend
+            // For demo, we'll just show an alert
+            alert(`Thank you! We'll notify you at ${email} when this page is ready.`);
+            
+            // Close the modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('notifyModal'));
+            modal.hide();
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
